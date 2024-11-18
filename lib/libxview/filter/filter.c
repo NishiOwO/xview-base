@@ -10,6 +10,8 @@ static char     sccsid[] = "@(#)filter.c 20.28 93/06/28";
  *	file for terms of the license.
  */
 
+#define cfree free
+
 #include <ctype.h>
 #include <string.h>
 #include <xview_private/io_stream.h>

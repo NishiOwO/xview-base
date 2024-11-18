@@ -23,9 +23,11 @@
 #include <xview/panel.h>
 #include <xview_private/tty_impl.h>
 #ifdef	XV_USE_TTCOMPAT
+#ifndef __NetBSD__
 #include <sys/stream.h>
 #include <sys/ttold.h>
 #include <sys/ttcompat.h>
+#endif
 #endif
 
 /*			Implementation Overview.

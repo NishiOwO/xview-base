@@ -24,9 +24,11 @@
 #include <sys/resource.h>
 #include <xview/base.h>
 #ifndef __linux__
+#ifndef __NetBSD__
 # ifdef SYSV_WAIT
 #  include <sys/rusage.h>
 # endif 
+#endif
 #endif
 
 #ifdef __NetBSD__

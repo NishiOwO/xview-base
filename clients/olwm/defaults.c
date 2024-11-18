@@ -82,7 +82,7 @@ GetUserDefaults(dpy)
 	if (homedir != NULL) {
 	    (void) strcpy(filename, homedir);
 	    (void) strcat(filename, "/.Xdefaults-");
-#ifndef __linux__
+#if !defined(__linux__) && !defined(__NetBSD__)
 	    if (0 == gethostname(hostname, sizeof(hostname), &namelen)) {
 #else
 	    if (0 == gethostname(hostname, sizeof(hostname))) {

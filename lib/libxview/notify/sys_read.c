@@ -37,7 +37,11 @@ notify_read(fd, buf, nbytes)
 #ifdef __GLIBC__
     return (__read(fd, buf, (off_t)nbytes));
 #else
+#ifdef __NetBSD__
+    return (read(fd, buf, (off_t)nbytes));
+#else
     return (sys_read(fd, buf, (off_t)nbytes));
+#endif
 #endif
 #endif
 }

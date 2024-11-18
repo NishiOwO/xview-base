@@ -4,6 +4,8 @@ static char     sccsid[] = "@(#)defaults.c 20.33 93/06/28";
 #endif
 #endif
 
+unsigned int ndet_flags;
+
 /*
  *	(c) Copyright 1989 Sun Microsystems, Inc. Sun design patents 
  *	pending in the U.S. and foreign countries. See LEGAL_NOTICE 

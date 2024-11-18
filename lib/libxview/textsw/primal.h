@@ -44,7 +44,7 @@
         formal1##formal2
 #endif /* SVR4 */
 
-#define	pkg_private	extern
+#define	pkg_private	
 
 
 #ifdef USING_SETS

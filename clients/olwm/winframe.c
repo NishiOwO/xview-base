@@ -154,7 +154,7 @@ Graphics_info *gis;
 /* REMIND change this function to use olgx macros to extract
  * font size 
  */
-static int
+int
 headerHeight(cli,gis)
 Client *cli;
 Graphics_info *gis;

@@ -39,3 +39,6 @@ MakeLintLibSubdirs($(SUBDIRS))
 #ifdef __linux__
 XVIEW_DEPLIBS = $(LDPRELIBS) $(XLIB) -L../../libolgx -lolgx -lc
 #endif
+#ifdef __NetBSD__
+XVIEW_DEPLIBS = $(LDPRELIBS) $(XLIB) -L../../libolgx -lolgx -lc
+#endif

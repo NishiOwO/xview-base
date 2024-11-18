@@ -198,7 +198,7 @@ char ***slot;
     }
 }
 
-static rehash(table)
+rehash(table)
 register st_table *table;
 {
     register st_table_entry *ptr, *next, **old_bins = table->bins;

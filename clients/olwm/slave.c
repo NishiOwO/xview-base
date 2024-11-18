@@ -144,7 +144,7 @@ SlaveStopped()
 /* ----------------------------------------------------------------------
  *	SlaveFailure	- called if Slave process wont/cant start
  * ---------------------------------------------------------------------*/
-static void
+void
 SlaveFailure()
 {
 	char	errbuf[256];

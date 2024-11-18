@@ -162,7 +162,7 @@ ParseCmd(line)
 /* ----------------------------------------------------------------------
  *      MatchKeyword
  * ---------------------------------------------------------------------*/
-static Command *
+Command *
 MatchCommand(keyword)
 	char		*keyword;
 {
@@ -179,7 +179,7 @@ MatchCommand(keyword)
 /* ----------------------------------------------------------------------
  *      MatchAttr
  * ---------------------------------------------------------------------*/
-static CmdAttr *
+CmdAttr *
 MatchAttr(cmd,name)
 	Command		*cmd;
 	char		*name;
@@ -208,7 +208,7 @@ MatchAttr(cmd,name)
 /* ----------------------------------------------------------------------
  *      EncodeAttrValue
  * ---------------------------------------------------------------------*/
-static int
+int
 EncodeAttrValue(attr,stream)
 	CmdAttr		*attr;
 	FILE		*stream;
@@ -227,7 +227,7 @@ EncodeAttrValue(attr,stream)
 /* ----------------------------------------------------------------------
  *      DecodeAttrValue
  * ---------------------------------------------------------------------*/
-static int
+int
 DecodeAttrValue(attr,valuestr)
 	CmdAttr		*attr;
 	char		*valuestr;

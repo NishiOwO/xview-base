@@ -2267,7 +2267,7 @@ menuHandleMotion(dpy, pevent)
     }
 }
 
-static Bool
+Bool
 isEnabled(mInfo, item)
     MenuInfo *mInfo;
     int item;

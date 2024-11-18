@@ -43,7 +43,7 @@ static char sccsid[] = "@(#)textedit.c 15.50 90/05/22";
 long	textsw_store_file();
 */
 char	*getwd();
-#ifndef __linux__
+#if !defined(__linux__) && !defined(__NetBSD__)
 char *sprintf();
 #endif
 void	frame_cmdline_help();
@@ -915,7 +915,7 @@ mysigproc(me, sig, when)
 	char			 name_to_use[MAXNAMLEN];
 	int			 pid = getpid();
 	int			 was_SIGILL = (sig == SIGILL);
-#ifndef __linux__
+#if !defined(__linux__) && !defined(__NetBSD__)
 	struct sigvec vec;
 #else
 	struct sigaction vec;
@@ -976,7 +976,7 @@ Die:
 #ifndef lint
 	    char	dummy, *bad_ptr = 0;
 	    /* (void)signal(SIGSEGV, SIG_DFL);	/* Make sure 0 deref dumps. */
-#ifndef __linux__
+#if !defined(__linux__) && !defined(__NetBSD__)
 	    vec.sv_handler = SIG_DFL;
 	    vec.sv_mask = vec.sv_onstack = 0;
 	    sigvec(SIGSEGV, &vec, 0);
@@ -999,7 +999,7 @@ Die:
 #endif
 	} else {
 	    /* (void)signal(SIGILL, SIG_DFL);	/* Make sure abort() dumps. */
-#ifndef __linux__
+#if !defined(__linux__) && !defined(__NetBSD__)
             vec.sv_handler = SIG_DFL; 
 	    vec.sv_mask = vec.sv_onstack = 0; 
             sigvec(SIGILL, &vec, 0);
@@ -1027,7 +1027,7 @@ Die:
 /*
  * Misc. utilities
  */
-static
+
 die(msg1, msg2, msg3)
 	char	*msg1, *msg2, *msg3;
 {

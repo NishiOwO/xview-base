@@ -19,7 +19,7 @@ static char     sccsid[] = "@(#)ndetsitimr.c 20.13 93/06/28 Copyr 1985 Sun Micro
 #include <xview_private/ndis.h>
 #include <xview_private/nint.h>
 
-extern          Notify_func
+extern         Notify_func
 notify_set_itimer_func(nclient, func, which, value, ovalue)
     Notify_client   nclient;
     Notify_func     func;

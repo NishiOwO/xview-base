@@ -37,7 +37,11 @@ notify_fcntl(fd, cmd, arg)
 #ifdef __GLIBC__
     return (__fcntl(fd, cmd, arg));
 #else
+#ifdef __NetBSD__
+    return (fcntl(fd, cmd, arg));
+#else
     return (sys_fcntl(fd, cmd, arg));
+#endif
 #endif
 #endif
 }

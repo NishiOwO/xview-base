@@ -415,7 +415,7 @@ WinIconFrame	*win;
  *	window size of ICON_WIN_HEIGHT.  Otherwise use the default
  *	border size.
  */
-static int
+int
 heightTopIcon(win)
 WinIconFrame	*win;
 {
@@ -439,7 +439,7 @@ WinIconFrame	*win;
  *	window size of ICON_WIN_HEIGHT.  Otherwise use the default
  *	border size.
  */
-static int
+int
 heightBottomIcon(win)
 WinIconFrame	*win;
 {
@@ -460,7 +460,7 @@ WinIconFrame	*win;
 /* The icon pane has the same border width on either side, so this function
  * is used to calculate both border widths.
  */
-static int
+int
 widthBothIcon(win)
 WinIconFrame	*win;
 {

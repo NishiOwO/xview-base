@@ -31,7 +31,7 @@
 #endif
 #endif
 
-#ifdef __GLIBC__
+#if defined(__GLIBC__) || defined(__NetBSD__)
 
 int linux_select(int width, fd_set *readfds, fd_set *writefds,
                  fd_set *exceptfds, struct timeval *timeout) {

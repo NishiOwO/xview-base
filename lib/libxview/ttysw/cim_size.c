@@ -36,6 +36,8 @@ static char     sccsid[] = "@(#)cim_size.c 20.32 93/06/28";
 #include <xview_private/charscreen.h>
 #include <xview_private/portable.h>
 
+#define cfree free
+
 CHAR          **image;		/* BUG ALERT! Get rid of this global. */
 char          **screenmode;     /* BUG ALERT! Get rid of this global. */
 static CHAR    *lines_ptr;

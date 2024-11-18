@@ -68,7 +68,7 @@
 #define Xv_public_data		/* Part of the client interface */
 #define Xv_private	extern	/* Should only be used by the XView toolkit */
 #define Xv_private_data		/* Should only be used by the XView toolkit */
-#define Pkg_private	extern	/* Should only be used by same pkg */
+#define Pkg_private		/* Should only be used by same pkg */
 
 typedef struct _xview_pkg {
     char                *name;

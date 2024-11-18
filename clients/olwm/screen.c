@@ -1518,7 +1518,6 @@ initOLGX(dpy,scrInfo)
 /*
  * updateScreenWorkspaceColor -- change all GC/Ginfo's that use WorkspaceColor
  */
-static
 updateScreenWorkspaceColor(dpy,scrInfo)
 	Display		*dpy;
 	ScreenInfo	*scrInfo;
@@ -1540,7 +1539,6 @@ updateScreenWorkspaceColor(dpy,scrInfo)
 /*
  * updateScreenWindowColor -- change all GC/Ginfo's that use WindowColor
  */
-static
 updateScreenWindowColor(dpy,scrInfo)
 	Display		*dpy;
 	ScreenInfo	*scrInfo;
@@ -1597,7 +1595,6 @@ updateScreenWindowColor(dpy,scrInfo)
 /*
  * updateScreenForegroundColor -- change all GC/Ginfo's that use Foreground
  */
-static
 updateScreenForegroundColor(dpy,scrInfo)
 	Display		*dpy;
 	ScreenInfo	*scrInfo;
@@ -1630,7 +1627,6 @@ updateScreenForegroundColor(dpy,scrInfo)
 /*
  * updateScreenBackgroundColor -- change all GC/Ginfo's that use Background
  */
-static
 updateScreenBackgroundColor(dpy,scrInfo)
 	Display		*dpy;
 	ScreenInfo	*scrInfo;
@@ -1645,7 +1641,6 @@ updateScreenBackgroundColor(dpy,scrInfo)
 /*
  * updateScreenBorderColor -- change all GC/Ginfo's that use Border
  */
-static
 updateScreenBorderColor(dpy,scrInfo)
 	Display		*dpy;
 	ScreenInfo	*scrInfo;
@@ -1761,7 +1756,7 @@ updateScreenIconFont(dpy,scrInfo)
 /*
  * updateScreenGlyphFont -- change all GC/Ginfo's that use GlyphFont
  */
-static
+
 updateScreenGlyphFont(dpy,scrInfo)
 	Display		*dpy;
 	ScreenInfo	*scrInfo;

@@ -515,7 +515,7 @@ void	ntfy_assert_debug();
 
 void	ntfy_fatal_error();
 
-#define	pkg_private	extern
+#define	pkg_private	
 #define	pkg_private_data
 
 #endif	/* NTFY_DEFINED */
