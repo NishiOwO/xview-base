@@ -7,7 +7,7 @@
  */
 #ifndef lint
 #ifdef sccs
-static	char	sccsid[] = "@(#) mem.c 26.1 90/08/14 Crucible";
+	char	sccsid[] = "@(#) mem.c 26.1 90/08/14 Crucible";
 #endif
 #endif
 

@@ -65,7 +65,7 @@ typedef struct _HelpWindow {
  *			Local Data
  * ---------------------------------------------------------------------*/
 
-static HelpWindow	*helpWinList ;	/* dynamic array of HelpWindows
+ HelpWindow	*helpWinList ;	/* dynamic array of HelpWindows
 				   	   one for each screen */
 
 				/* convience macro to access list as array */
@@ -77,9 +77,9 @@ static HelpWindow	*helpWinList ;	/* dynamic array of HelpWindows
 #define HS_NOHELPERR	3
 #define HS_LENGTH	4
 #ifdef OW_I18N_L4
-static wchar_t		*helpStrings[HS_LENGTH];
+ wchar_t		*helpStrings[HS_LENGTH];
 #else
-static char		*helpStrings[HS_LENGTH];
+ char		*helpStrings[HS_LENGTH];
 #endif
 
 /* ----------------------------------------------------------------------
@@ -108,12 +108,12 @@ static char		*helpStrings[HS_LENGTH];
 /* ----------------------------------------------------------------------
  *	Magnify glass image and mask
  * ----------------------------------------------------------------------*/
-static unsigned short    hwmglass_data[] = {
+ unsigned short    hwmglass_data[] = {
 #include <images/mglass.icon>
 };
 mpr_static(hwmglass_pr, 199, 133, 1, hwmglass_data);
  
-static unsigned short    hwmglass_mask_data[] = {
+ unsigned short    hwmglass_mask_data[] = {
 #include <images/mglass_mask.icon>
 };
 mpr_static(hwmglass_mask_pr, 199, 133, 1, hwmglass_mask_data);
@@ -186,7 +186,7 @@ Error:
 /* ----------------------------------------------------------------------
  *	InitHelpWindow		- Inits helpWinList array.
  * ----------------------------------------------------------------------*/
-static	void
+	void
 InitHelpWindow()
 {
 	HelpWindow	*hw;
@@ -215,7 +215,7 @@ InitHelpWindow()
 /* ----------------------------------------------------------------------
  *	CreateHelpWindow	- Creates the help window frame and etc.
  * ----------------------------------------------------------------------*/
-static 	Bool
+ 	Bool
 CreateHelpWindow(hw,helpkey)
 	HelpWindow	*hw;
 	char		*helpkey;
@@ -325,7 +325,7 @@ CreateHelpWindow(hw,helpkey)
 /* ----------------------------------------------------------------------
  *	ResetHelpWindow
  * ---------------------------------------------------------------------*/
-static	void
+	void
 ResetHelpWindow(hw)
 	HelpWindow	*hw;
 {
@@ -335,7 +335,7 @@ ResetHelpWindow(hw)
 /* ----------------------------------------------------------------------
  *	DestroyHelpWindow	- Destroy the help window
  * ---------------------------------------------------------------------*/
-static Notify_value
+ Notify_value
 DestroyHelpWindow(client,status)
 	Notify_client	client;
 	Destroy_status	status;
@@ -361,7 +361,7 @@ DestroyHelpWindow(client,status)
 /* ----------------------------------------------------------------------
  *	TextHelpWindow		- Inserts the help text.
  * ---------------------------------------------------------------------*/
-static	Bool
+	Bool
 TextHelpWindow(hw,helpkey)
 	HelpWindow	*hw;
 	char		*helpkey;
@@ -460,7 +460,7 @@ TextHelpWindow(hw,helpkey)
 /* ----------------------------------------------------------------------
  *	ImageHelpWindow
  * ---------------------------------------------------------------------*/
-static	Bool
+	Bool
 ImageHelpWindow(hw,mousex,mousey)
 	HelpWindow	*hw;
 {
@@ -500,7 +500,7 @@ ImageHelpWindow(hw,mousex,mousey)
 /* ----------------------------------------------------------------------
  *	ConstrainMousePos
  * ---------------------------------------------------------------------*/
-static int
+ int
 ConstrainMousePos(nscreen,mousex,mousey,imagex,imagey)
 	int		nscreen;
 	int		mousex,mousey;
@@ -528,7 +528,7 @@ ConstrainMousePos(nscreen,mousex,mousey,imagex,imagey)
  *	MoreHelp
  * ---------------------------------------------------------------------*/
 /*ARGSUSED*/
-static void
+ void
 MoreHelp(item,event)
 	Panel_item	item;
 	Event		*event;
@@ -547,7 +547,7 @@ MoreHelp(item,event)
 /* ----------------------------------------------------------------------
  *	ErrorNotice
  * ---------------------------------------------------------------------*/
-static	void
+	void
 ErrorNotice(nscreen,errmsg,helpkey)
 	int		nscreen;
 	char		*errmsg;

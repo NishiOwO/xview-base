@@ -23,7 +23,8 @@ notify_next_wait3_func(nclient, pid, status, rusage)
     Notify_client   nclient;
     int             pid;
 #ifndef SVR4
-    union wait     *status;
+    /*union wait     *status;*/
+    int *status;
 #else /* SVR4 */
     int *status;
 #endif /* SVR4 */

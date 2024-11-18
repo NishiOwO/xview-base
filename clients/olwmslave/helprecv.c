@@ -8,7 +8,7 @@
  * ---------------------------------------------------------------------*/
 #ifndef line
 #ifdef sccs
-static	char	sccsid[] = "@(#) helprecv.c 1.3 93/06/28 Sun Micro";
+	char	sccsid[] = "@(#) helprecv.c 1.3 93/06/28 Sun Micro";
 #endif
 #endif
 
@@ -30,7 +30,7 @@ RegisterHelpCmd()
 /* ----------------------------------------------------------------------
  *	ReceiveHelpCmd
  * ---------------------------------------------------------------------*/
-static void
+ void
 ReceiveHelpCmd(cmd)
 	Command		*cmd;
 {

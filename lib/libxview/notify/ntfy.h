@@ -204,7 +204,12 @@ extern	sigset_t ntfy_sigs_delayed;/* Bit mask of signals received while in
 
 #if (defined(__linux__) && defined(__GLIBC__)) || defined(__NetBSD__)
 /* martin.buck@bigfoot.com */
+#ifdef __NetBSD__
+#define sigisempty(s)   (!(((s)->__bits[0]) | ((s)->__bits[1])   \
+                        | ((s)->__bits[2]) | ((s)->__bits[3])))
+#else
 #define sigisempty(s) sigisemptyset(s)
+#endif
 #else
 #ifdef SVR4
 #define sigisempty(s)   (!(((s)->__sigbits[0]) | ((s)->__sigbits[1])   \

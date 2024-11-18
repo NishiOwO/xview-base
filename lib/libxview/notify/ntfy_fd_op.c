@@ -10,7 +10,7 @@ static char     sccsid[] = "@(#)ntfy_fd_op.c 20.13 93/06/28";
  *	file for terms of the license.
  */
 
-#ifdef __linux__
+#if defined(__linux__) || defined(__NetBSD__)
 #include <sys/time.h>
 #include <sys/param.h> /* for howmany() */
 #endif

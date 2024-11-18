@@ -8,7 +8,7 @@
  * ---------------------------------------------------------------------*/
 #ifndef line
 #ifdef sccs
-static char     sccsid[] = "@(#) propssend.c 1.3 93/06/28 Sun Micro";
+ char     sccsid[] = "@(#) propssend.c 1.3 93/06/28 Sun Micro";
 #endif
 #endif
 

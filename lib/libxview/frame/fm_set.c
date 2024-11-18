@@ -63,8 +63,7 @@ typedef struct {
 #define WSSemanticState		(1L<<0)
 #define WSSemanticCompose	(1L<<0)
 
-mpr_static(default_frame_icon_mpr, ICON_DEFAULT_WIDTH, ICON_DEFAULT_HEIGHT, 1,
-	   default_frame_icon_image);
+mpr_static(default_frame_icon_mpr, ICON_DEFAULT_WIDTH, ICON_DEFAULT_HEIGHT, 1, default_frame_icon_image);
 
 Pkg_private     Xv_opaque
 frame_set_avlist(frame_public, avlist)

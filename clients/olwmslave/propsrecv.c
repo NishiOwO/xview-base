@@ -8,7 +8,7 @@
  * ---------------------------------------------------------------------*/
 #ifndef lint
 #ifdef sccs
-static char     sccsid[] = "@(#) propsrecv.c 1.3 93/06/28 Sun Micro";
+ char     sccsid[] = "@(#) propsrecv.c 1.3 93/06/28 Sun Micro";
 #endif
 #endif
 
@@ -30,7 +30,7 @@ RegisterPropsCmd()
 /* ----------------------------------------------------------------------
  *	ReceivePropsCmd
  * ---------------------------------------------------------------------*/
-static void
+ void
 ReceivePropsCmd(cmd)
 	Command		*cmd;
 {

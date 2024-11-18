@@ -23,7 +23,8 @@ notify_default_wait3(client, pid, status, rusage)
     Notify_client   client;
     int             pid;
 #ifndef SVR4
-    union wait     *status;
+    /*union wait     *status;*/
+    int *status;
 #else /* SVR4 */
     int *status;
 #endif /* SVR4 */

@@ -1,6 +1,6 @@
 #ifndef lint
 #ifdef sccs
-static char     sccsid[] = "@(#)help_file.c 1.17 90/12/04";
+ char     sccsid[] = "@(#)help_file.c 1.17 90/12/04";
 #endif
 #endif
 
@@ -27,17 +27,17 @@ static char     sccsid[] = "@(#)help_file.c 1.17 90/12/04";
 #define DEFAULT_HELP_DIRECTORY "/usr/lib/help"
 #define MAX_MORE_HELP_CMD 128
 
-static FILE    *help_file;
-static char     help_buffer[128];
+ FILE    *help_file;
+ char     help_buffer[128];
 
-static int
+ int
 help_search_file(key, more_help)	/* returns XV_OK or XV_ERROR */
     char           *key;	/* Spot Help key */
     char	  **more_help; /* OUTPUT parameter: More Help system cmd */
 {
     char           *entry;
     char	   *more_help_cmd;
-    static char	    more_help_cmd_buffer[MAX_MORE_HELP_CMD];
+     char	    more_help_cmd_buffer[MAX_MORE_HELP_CMD];
 
     fseek(help_file, 0, 0);
 
@@ -123,7 +123,7 @@ help_get_arg(data, more_help)	/* returns XV_OK or XV_ERROR */
     char	    data_copy[64];
     char	    filename[64];
     char	   *key;
-    static char     last_client[64];
+     char     last_client[64];
 
     if (data == NULL)
 	return XV_ERROR;	/* No key supplied */

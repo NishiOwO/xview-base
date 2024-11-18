@@ -1,4 +1,4 @@
-#ifdef __linux__
+#if defined(__linux__) || defined(__NetBSD__)
 
 
 /* Function for calling the select(2) system call in linux.
@@ -20,7 +20,8 @@
 #include <sys/time.h>
 #include <sys/types.h>
 #include <unistd.h>
-                     
+                   
+#ifndef __NetBSD__
 #ifndef __GLIBC__
 /* #define __LIBRARY__ */
 #include <syscall.h>
@@ -28,6 +29,7 @@
 
 #ifdef DEBUG
 #include <stdio.h>
+#endif
 #endif
 #endif
 
@@ -40,7 +42,11 @@ int linux_select(int width, fd_set *readfds, fd_set *writefds,
   if (timeout != NULL) {
     tout_copy = *timeout;
   }
+#ifdef __NetBSD__
+  return select(width, readfds, writefds, exceptfds, timeout ? &tout_copy : NULL);
+#else
   return __select(width, readfds, writefds, exceptfds, timeout ? &tout_copy : NULL);
+#endif
 }
 
 #else /* __GLIBC__ */

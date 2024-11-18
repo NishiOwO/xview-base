@@ -1,2 +1,2 @@
 #!/bin/sh
-gmake MAKE=gmake LD="gcc -fcommon" CC="gcc -fcommon" || exit 1
+gmake MAKE=gmake LD="gcc -fcommon" CC="gcc -fcommon" "$@" || exit 1

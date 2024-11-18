@@ -165,7 +165,7 @@ XCOMM # XView.cf for XView release 3.0.  Specify site preferences here.
  *	These are unchanged from X.V11R4 and the XView 2 release.
  */
 #ifndef InstallOpenLookFonts
-#define InstallOpenLookFonts NO
+#define InstallOpenLookFonts YES
 #endif
 /*
  *	If you want to install the private header files, set below value to

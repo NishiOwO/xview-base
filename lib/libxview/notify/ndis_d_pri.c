@@ -16,7 +16,7 @@ static char     sccsid[] = "@(#)ndis_d_pri.c 20.16 93/06/28 Copyr 1985 Sun Micro
 #include <xview_private/ntfy.h>
 #include <xview_private/ndis.h>
 #include <signal.h>
-#ifdef __linux__
+#if defined(__linux__) || defined(__NetBSD__)
 #include <sys/param.h> /* for howmany(), NBBY */
 #ifndef NBBY
 #define NBBY 8

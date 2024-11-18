@@ -2,7 +2,7 @@
  * called through syscall() in XView. We don't use syscall,
  * but the unistd.h macros in the kernel sources. */
 
-#if defined(__linux__) && !defined(__LINUX_SELECT_H)
+#if (defined(__NetBSD__) || defined(__linux__)) && !defined(__LINUX_SELECT_H)
 #define __LINUX_SELECT_H
 
 #include <unistd.h>

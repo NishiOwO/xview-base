@@ -1,6 +1,6 @@
 #ifndef line
 #ifdef sccs
-static char     sccsid[] = "@(#) olwmslave.c 1.9 93/06/28 Sun Micro";
+ char     sccsid[] = "@(#) olwmslave.c 1.9 93/06/28 Sun Micro";
 #endif
 #endif
 /*
@@ -75,7 +75,7 @@ main(argc,argv)
 	else
 #ifndef OPENWINHOME_DEFAULT
 		/* martin-2.buck@student.uni-ulm.de */
-		(void)strcpy(localePath,OPENWINHOME_DEFAULT);
+		(void)strcpy(localePath,"/usr/openwin");
 #else
 		(void)strcpy(localePath,"/usr/share");
 #endif
@@ -101,7 +101,7 @@ main(argc,argv)
 /* ----------------------------------------------------------------------
  *	makeDpyEnvString
  * ----------------------------------------------------------------------*/
-static char *
+ char *
 makeDpyEnvString(dpy,nscreen)
 	Display		*dpy;
 	int		nscreen;
@@ -124,7 +124,7 @@ extern	char	*strtok();
 /* ----------------------------------------------------------------------
  *	InitScreenRoot
  * ----------------------------------------------------------------------*/
-static void
+ void
 InitScreenInfo(server)
 	Xv_Server	server;
 {
@@ -149,7 +149,7 @@ InitScreenInfo(server)
  *	ParseScreenArgs
  * ----------------------------------------------------------------------*/
 /*ARGSUSED*/
-static void
+ void
 ParseScreenArgs(argc,argv)
 	int		*argc;
 	char		**argv;
@@ -166,7 +166,7 @@ ParseScreenArgs(argc,argv)
 /* ----------------------------------------------------------------------
  *	InputReader
  * ----------------------------------------------------------------------*/
-static Notify_value	
+ Notify_value	
 InputReader(client,fd)
 	Notify_client	client;
 	int		fd;

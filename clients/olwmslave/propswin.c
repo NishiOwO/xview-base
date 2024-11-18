@@ -8,7 +8,7 @@
  * ----------------------------------------------------------------------*/
 #ifndef line
 #ifdef sccs
-static char     sccsid[] = "@(#) propswin.c 1.7 93/06/28 Sun Micro";
+ char     sccsid[] = "@(#) propswin.c 1.7 93/06/28 Sun Micro";
 #endif
 #endif
 
@@ -29,7 +29,7 @@ typedef struct {
  *      Local Data
  * ----------------------------------------------------------------------*/
 
-static WindowProps	*winPropsList = 0; 	/* dynamic array of WindowProps
+ WindowProps	*winPropsList = 0; 	/* dynamic array of WindowProps
 					     	 * one for each server */
 #define WinProps(nscr)	(&winPropsList[(nscr)]);/* convenience macros to access
 						 * list as array */
@@ -74,7 +74,7 @@ ShowWindowProps(nscreen)
 /* ----------------------------------------------------------------------
  *      InitWindowProps
  * ----------------------------------------------------------------------*/
-static void
+ void
 InitWindowProps()
 {
 	WindowProps	*wp;
@@ -92,7 +92,7 @@ InitWindowProps()
 /* ----------------------------------------------------------------------
  *      CreateWindowProps
  * ----------------------------------------------------------------------*/
-static Bool
+ Bool
 CreateWindowProps(wp)
 	WindowProps	*wp;
 {
@@ -161,7 +161,7 @@ CreateWindowProps(wp)
 /* ----------------------------------------------------------------------
  *      DestroyWindowProps
  * ----------------------------------------------------------------------*/
-static Notify_value
+ Notify_value
 DestroyWindowProps(client,status)
 	Notify_client	client;
 	Destroy_status	status;
@@ -181,7 +181,7 @@ DestroyWindowProps(client,status)
 /* ----------------------------------------------------------------------
  *      ApplyProps
  * ----------------------------------------------------------------------*/
-static void
+ void
 ApplyProps(item,event)
 	Panel_item	item;
 	Event		*event;
@@ -191,7 +191,7 @@ ApplyProps(item,event)
 /* ----------------------------------------------------------------------
  *      ResetProps
  * ----------------------------------------------------------------------*/
-static void
+ void
 ResetProps(item,event)
 	Panel_item	item;
 	Event		*event;

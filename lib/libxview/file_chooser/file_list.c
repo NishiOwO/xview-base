@@ -23,8 +23,6 @@ static char     sccsid[] = "@(#)file_list.c 1.30 93/06/28";
 #include <xview_private/flist_impl.h>
 #include <xview_private/portable.h>
 
-
-
 /* X bitmaps for default glyphs */
 #include <images/fl_arrow.xbm>
 #include <images/fl_folder.xbm>
@@ -527,7 +525,7 @@ file_list_destroy ( public, status )
     if (status == DESTROY_CLEANUP) {
 	xv_free_ref( private->directory );
 	xv_free_ref( private->regex_pattern );
-#ifdef __linux__
+#if defined(__linux__)
 	if (private->regex_compile != NULL && private->regex_compile->allocated)
 		xv_free_ref( private->regex_compile->buffer);
 #endif
@@ -1148,7 +1146,7 @@ flist_update_list( private, rows, num_rows )
 
 /****************************************************************************/
 
-#ifndef __linux__
+#if !defined(__linux__) && !defined(__NetBSD__)
 /*
  * Front end to regexp(3).
  *
@@ -1231,14 +1229,17 @@ flist_compile_regex( private )
 
     if (private->regex_compile == NULL) {
         private->regex_compile = xv_alloc_n(regex_t, 1);
+#ifdef __linux__
         private->regex_compile->translate = NULL;
+#endif
     }
+#ifdef __linux__
     if (private->regex_compile->allocated == 0) {
         private->regex_compile->buffer = xv_alloc_n(char, MAXPATHLEN + 1);
         private->regex_compile->allocated = MAXPATHLEN + 1;
     }
-    re_compile_pattern(private->regex_pattern, strlen(private->regex_pattern),
-			private->regex_compile);
+#endif
+    regcomp(private->regex_compile, private->regex_pattern, 0);
 } 
 
 static int
@@ -1246,9 +1247,14 @@ flist_match_regex( s, private )
      char *s;
      File_list_private *private;
 {
+	regmatch_t pmatch[1];
+#ifdef __linux__
     if (private->regex_compile == NULL || private->regex_compile->allocated == 0)
+#else
+    if (private->regex_compile == NULL)
+#endif
         return 0;
-    return (re_match(private->regex_compile, s, strlen(s), 0, NULL) != -1);
+    return (regexec(private->regex_compile, s, 1, pmatch, 0) != -1);
 }
 #endif /* __linux__ */
 /****************************************************************************/
