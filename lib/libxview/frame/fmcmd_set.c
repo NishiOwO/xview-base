@@ -17,6 +17,13 @@ static char     sccsid[] = "@(#)fmcmd_set.c 1.46 93/06/28";
 #include <xview_private/frame_cmd.h>
 #include <xview/panel.h>
 #include <xview/server.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
+
+static int update_default_pin_state();
 
 Pkg_private     Xv_opaque
 frame_cmd_set_avlist(frame_public, avlist)

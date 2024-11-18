@@ -76,7 +76,7 @@ Done:
     return (result);
 }
 
-static int
+int
 textsw_do_put(view, local_operands)
     register Textsw_view_handle view;
     int             local_operands;

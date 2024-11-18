@@ -15,7 +15,7 @@ static char     sccsid[] = "@(#)sys_read.c 20.13 93/06/28 Copyr 1985 Sun Micro";
  */
 
 #ifndef SVR4
-#ifndef __linux__
+#if !defined(__linux__) && !defined(__NetBSD__)
 #include <syscall.h>
 #else
 #include "linux_select.h"
@@ -31,7 +31,7 @@ notify_read(fd, buf, nbytes)
     char           *buf;
     int             nbytes;
 {
-#ifndef __linux__
+#if !defined(__linux__) && !defined(__NetBSD__)
     return (syscall(SYS_read, fd, buf, nbytes));
 #else
 #ifdef __GLIBC__

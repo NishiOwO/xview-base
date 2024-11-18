@@ -17,6 +17,11 @@ static char     sccsid[] = "@(#)p_drop.c 1.22 93/06/28";
 #include <xview_private/pw_impl.h>
 #include <xview/server.h>
 #include <xview/svrimage.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 #define DROP_PRIVATE(item) \
 	XV_PRIVATE(Drop_info, Xv_panel_drop, item)

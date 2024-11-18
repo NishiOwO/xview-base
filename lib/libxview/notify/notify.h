@@ -28,11 +28,16 @@
 #  include <sys/rusage.h>
 # endif 
 #endif
+
+#ifdef __NetBSD__
+#include <ucontext.h>
+#else
 #ifdef SYSV_UCONTEXT
 # include <sys/ucontext.h>
 #else
 typedef int ucontext_t;
 #endif 
+#endif
 
 /*
  ***********************************************************************

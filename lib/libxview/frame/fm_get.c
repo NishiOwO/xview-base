@@ -13,6 +13,11 @@ static char     sccsid[] = "@(#)fm_get.c 20.62 93/06/28";
 #include <xview_private/fm_impl.h>
 #include <xview_private/draw_impl.h>
 #include <xview/server.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 static int      			frame_fit_direction();
 /* ACC_XVIEW */

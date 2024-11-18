@@ -121,7 +121,7 @@ check_selection(buf, buf_len, first, last_plus_one,
 		    CHAR            marker2[3];
 		    int             marker2_len;
 		    unsigned        direction;
-		    static void     textsw_get_match_symbol();
+		    void     textsw_get_match_symbol();
 
 		    buf = buf + (buf_len - marker1_len);
 		    (void) textsw_get_match_symbol(marker1, marker1_len,
@@ -152,7 +152,7 @@ check_selection(buf, buf_len, first, last_plus_one,
 		    CHAR            marker2[3];
 		    int             marker2_len;
 		    unsigned        direction;
-		    static void     textsw_get_match_symbol();
+		    void     textsw_get_match_symbol();
 
 		    (void) textsw_get_match_symbol(marker1, marker1_len,
 					 marker2, &marker2_len, &direction);

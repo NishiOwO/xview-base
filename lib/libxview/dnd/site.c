@@ -241,7 +241,7 @@ DndDropAreaOps(site, mode, area)
 	      return(XV_ERROR);
 
 	  rect = xv_alloc(Rect);
-#if defined(SVR4) || defined(__linux__)
+#if defined(SVR4) || defined(__linux__) || defined(__NetBSD__)
           /* This will probably not work right, but it compiles. */
           /* (rectNode->rect) is of the wrong type. */
           memmove(rect, &(rectNode->rect),  sizeof(Rect));

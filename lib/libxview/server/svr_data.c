@@ -11,6 +11,12 @@ static char     sccsid[] = "@(#)svr_data.c 1.15 93/06/28";
 
 #include <xview_private/svr_impl.h>
 
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
+
 Xv_pkg          xv_server_pkg = {
     "Server",
     ATTR_PKG_SERVER,

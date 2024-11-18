@@ -22,12 +22,12 @@ static char     sccsid[] = "@(#)ndet_fcntl.c 20.13 93/06/28 Copyr 1985 Sun Micro
 #ifdef SVR4
 #include <sys/file.h>
 #endif /* SVR4 */
-#ifdef __linux__
+#if defined(__linux__) || defined(__NetBSD__)
 #include <stdarg.h>
 #endif
 
 int
-#ifndef __linux__
+#if !defined(__linux__) && !defined(__NetBSD__)
 #ifdef SVR4
 xv_fcntl(fd, cmd, arg)
 #else

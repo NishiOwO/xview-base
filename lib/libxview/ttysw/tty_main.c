@@ -1371,7 +1371,7 @@ ttysw_eventstd(ttysw_view_public, ie)
     }
 }
 
-static int
+int
 ttysw_process_point(ttysw, ie)
     register Ttysw_folio ttysw;
     register struct inputevent *ie;
@@ -1393,7 +1393,7 @@ ttysw_process_point(ttysw, ie)
     return TTY_DONE;
 }
 
-static int
+int
 ttysw_process_adjust(ttysw, ie)
     register Ttysw_folio ttysw;
     register struct inputevent *ie;
@@ -1414,7 +1414,7 @@ ttysw_process_adjust(ttysw, ie)
     return TTY_DONE;
 }
 
-static int
+int
 ttysw_process_motion(ttysw, ie)
     register Ttysw_folio ttysw;
     register struct inputevent *ie;
@@ -1426,7 +1426,7 @@ ttysw_process_motion(ttysw, ie)
     return TTY_DONE;
 }
 
-static int
+int
 ttysw_process_keyboard(ttysw, ie)
     Ttysw_folio     ttysw;
     struct inputevent *ie;
@@ -1537,7 +1537,7 @@ xv_tty_new_size(ttysw, cols, lines)
      * Otherwise, we use the winsize struct  and TIOCSWINSZ ioctl.
      */
     struct winsize  ws;
-#if !defined(SVR4) && !defined(__linux__)
+#if !defined(SVR4) && !defined(__linux__) && !defined(__NetBSD__)
     struct sigvec vec, ovec;
 
     vec.sv_handler = SIG_IGN;
@@ -1550,7 +1550,7 @@ xv_tty_new_size(ttysw, cols, lines)
     if ((ioctl(ttysw->ttysw_tty, TIOCSWINSZ, &ws)) == -1)
 	perror(XV_MSG("ttysw-TIOCSWINSZ"));
 
-#if !defined(SVR4) && !defined(__linux__)
+#if !defined(SVR4) && !defined(__linux__) && !defined(__NetBSD__)
     (void) sigvec(SIGTTOU, &ovec, 0);
 #endif
 #endif /* sun */
@@ -1650,7 +1650,7 @@ Pkg_private void
 ttysw_flush_input(ttysw)
     Ttysw_folio     ttysw;
 {
-#if !defined(SVR4) && !defined(__linux__)
+#if !defined(SVR4) && !defined(__linux__) && !defined(__NetBSD__)
     struct sigvec   vec, ovec;	/* Sys V compatibility */
     int flushf = 0;
 
@@ -1670,7 +1670,7 @@ ttysw_flush_input(ttysw)
      *
      * N.B.: Since SVR4 ==> XV_USE_TERMIOS, this can be simplified.
      */
-#   ifdef XV_USE_TERMIOS
+#   if defined(XV_USE_TERMIOS) || defined(__NetBSD__)
     if (tcflush(ttysw->ttysw_tty, TCIFLUSH) < 0)
 #   else /* XV_USE_TERMIOS */
 #   ifndef SVR4

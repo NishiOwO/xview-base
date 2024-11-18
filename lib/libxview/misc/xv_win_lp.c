@@ -25,6 +25,11 @@ static char     sccsid[] = "@(#)xv_win_lp.c 1.11 93/06/28";
 #include <xview_private/ndis.h>
 #include <xview/frame.h>
 #include <xview/server.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 static Frame		xv_loop_frame = (Frame)NULL;
 static Xv_opaque	xv_return;

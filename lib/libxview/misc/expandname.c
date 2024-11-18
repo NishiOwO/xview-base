@@ -29,7 +29,7 @@ static char     sccsid[] = "@(#)expandname.c 20.24 93/06/28";
 #include <vfork.h>
 #endif /* SVR4 */
 #endif
-#ifdef __linux__
+#if defined(__linux__) || defined(__NetBSD__)
 #include <unistd.h>
 #endif
 

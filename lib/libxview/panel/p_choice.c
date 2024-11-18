@@ -120,7 +120,10 @@ static void     update_display();
 static void     update_item_rect();
 static void     update_value_rect();
 static Xv_opaque choice_do_menu_item();
-
+static int find_choice();
+static int modify_choice();
+static int move_specified();
+static int re_alloc_choices();
 
 static Panel_ops ops = {
     panel_default_handle_event,		/* handle_event() */

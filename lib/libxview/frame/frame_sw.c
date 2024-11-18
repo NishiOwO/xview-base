@@ -11,6 +11,11 @@ static char     sccsid[] = "@(#)frame_sw.c 20.26 93/06/28";
  */
 
 #include <xview_private/fm_impl.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 #ifdef OW_I18N
 #ifdef FULL_R5

@@ -27,6 +27,11 @@ static char     sccsid[] = "@(#)window_get.c 20.109 93/06/28";
 #include <xview_private/svr_impl.h>
 #endif /* FULL_R5 */
 #endif /* OW_I18N */
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 /*
  * Private

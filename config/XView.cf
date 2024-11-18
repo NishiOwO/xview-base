@@ -50,14 +50,6 @@ XCOMM # XView.cf for XView release 3.0.  Specify site preferences here.
 /*
  * Enable Linux-specific behaviour
  */
-#if defined(LinuxArchitecture) || defined(linux)
-#undef __linux__
-#define __linux__ 1
-#endif
-#if defined(i386Architecture) || defined(i386)
-#undef __i386
-#define __i386 1
-#endif
 /****************************************************************************/
 /*
  *	If you have Open Windows release 2.0 or greater distribution from Sun 
@@ -87,7 +79,7 @@ XCOMM # XView.cf for XView release 3.0.  Specify site preferences here.
  */
 /* #if HasOpenWindows */
 # ifndef OpenWindowsHome
-# define OpenWindowsHome $$OPENWINHOME
+# define OpenWindowsHome "/usr/openwin"
 # endif
 /* #endif */
 /*
@@ -112,7 +104,7 @@ XCOMM # XView.cf for XView release 3.0.  Specify site preferences here.
  *	the appropriate value.
  */
 #ifndef XVDestDir
-#define XVDestDir /usr/X11R6
+#define XVDestDir /usr/X11R7
 #endif
 /*
  *	Command to add object modules to the library.
@@ -216,7 +208,7 @@ XCOMM # XView.cf for XView release 3.0.  Specify site preferences here.
 #    define LibXViewDefines -I$(OPENWINHOME)/include -DX11R6 -DNO_CAST_VATOAV
 #   endif
 #  else
-#   define LibXViewDefines -DFULL_R5 -I$(OPENWINHOME)/include -DSUNOS41 -DX11R6
+#   define LibXViewDefines -DFULL_R5 -I$(OPENWINHOME)/include -DX11R6 -DSYSV_WAIT -DSYSV_UCONTEXT
 #  endif
 # endif
 #endif

@@ -1961,7 +1961,7 @@ ttysel_copy_in(buffer)
 }
 #endif  /* OW_I18N */
 
-static
+
 ttysel_resynch(ttysw, buffer)
     register struct ttysubwindow *ttysw;
     register Seln_function_buffer *buffer;

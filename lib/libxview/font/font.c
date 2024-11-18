@@ -150,6 +150,10 @@ static void	font_init_known_families();
 static void	font_init_known_styles();
 static void	font_init_sizes();
 static void	font_reduce_wildcards();
+static int	font_setup_defaults();
+static int	font_construct_name();
+static int	font_init_create_attrs();
+
 
 typedef struct family_foundry {
     char           *family;

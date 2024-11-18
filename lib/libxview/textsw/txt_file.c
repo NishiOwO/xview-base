@@ -47,13 +47,13 @@ static char     sccsid[] = "@(#)txt_file.c 20.81 93/06/28";
 	if ((unsigned)(to_test) != 0) (flags) |= (flag);	\
 	else (flags) &= ~(flag)
 
-#if defined(SVR4) || defined(__linux__)
+#if defined(SVR4) || defined(__linux__) || defined(__NetBSD__)
 extern char    *getcwd();
 #else
 extern char    *getwd();
 #endif /* SVR4 */
 
-#if defined(__linux__) && defined(__GLIBC__)
+#if (defined(__linux__) && defined(__GLIBC__)) || defined(__NetBSD__)
 /* martin.buck@bigfoot.com */
 #include <errno.h>
 #else
@@ -368,7 +368,7 @@ textsw_full_pathname(name)
     }
 
 #ifdef		OW_I18N
-#if defined(SVR4) || defined(__linux__)
+#if defined(SVR4) || defined(__linux__) || defined(__NetBSD__)
     if (getcwd(pathname_mb, MAXPATHLEN) == 0)
 #else
     if (getwd(pathname_mb) == 0)
@@ -378,7 +378,7 @@ textsw_full_pathname(name)
 
 #else		/* OW_I18N */
 
-#if defined(SVR4) || defined(__linux__)
+#if defined(SVR4) || defined(__linux__) || defined(__NetBSD__)
     if (getcwd(pathname, MAXPATHLEN) == 0)
 #else
     if (getwd(pathname) == 0)

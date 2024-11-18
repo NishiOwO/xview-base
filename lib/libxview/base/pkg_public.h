@@ -19,7 +19,6 @@
 #include <xview/pkg.h>
 #include <xview/xv_error.h>
 
-
 /*
  ***********************************************************************
  *		Typedefs, Enumerations, and Structures

@@ -15,7 +15,7 @@ static char     sccsid[] = "@(#)sys_select.c 20.17 93/06/28 Copyr 1985 Sun Micro
  */
 
 #ifndef SVR4
-#ifndef __linux__
+#if !defined(__linux__) && !defined(__NetBSD__)
 #include <syscall.h>
 #else
 #include "linux_select.h"
@@ -45,7 +45,7 @@ notify_select(nfds, readfds, writefds, exceptfds, tv)
 notify_select(nfds, in0, out0, ex0, tv)
 #endif /* SVR4 */
 #ifndef SVR4
-#ifndef __linux__
+#if !defined(__linux__) && !defined(__NetBSD__)
     int             nfds, *readfds, *writefds, *exceptfds;
 #else
     int             nfds;
@@ -59,7 +59,7 @@ notify_select(nfds, in0, out0, ex0, tv)
 {
 
 #ifndef SVR4
-#ifndef __linux__
+#if !defined(__linux__) && !defined(__NetBSD__)
     nfds = syscall(SYS_select, nfds, readfds, writefds, exceptfds, tv);
     ntfy_assert(!(nfds == 0 && tv == (struct timeval *) 0 &&
 		  *readfds == 0 && *writefds == 0 && *exceptfds == 0), 39

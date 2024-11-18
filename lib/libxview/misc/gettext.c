@@ -11,10 +11,12 @@ static char     sccsid[] = "@(#)gettext.c 50.21 93/06/28";
 #include <xview_private/gettext.h>
 
 char * dgettext(char *, char *), *bindtextdomain();
-char *_gettext();
+static char *_gettext();
 char *fgets(), *getenv();
-#if !defined(__linux__) || !defined(__GLIBC__)
+#if (!defined(__linux__) || !defined(__GLIBC__)) && (!defined(__NetBSD__))
 caddr_t mmap();
+#else
+#include <sys/mman.h>
 #endif
 
 static struct domain_binding *firstbind=0, *lastbind=0;

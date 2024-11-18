@@ -26,6 +26,11 @@ static char     sccsid[] = "@(#)p_utl.c 20.100 93/06/28";
 #include <xview/xv_xrect.h>
 #include <xview_private/draw_impl.h>
 #include <xview_private/pw_impl.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 extern struct pr_size 	 xv_pf_textwidth();
 Xv_private Xv_xrectlist *screen_get_clip_rects();

@@ -19,7 +19,7 @@ static char     sccsid[] = "@(#)ndet_loop.c 20.36 93/06/28 Copyr 1985 Sun Micro"
 #include <xview_private/ndet.h>
 #include <xview_private/nint.h>
 #include <xview_private/ndis.h>	/* For ndis_dispatch */
-#ifndef __linux__
+#if !defined(__linux__) && !defined(__NetBSD__)
 #ifndef SVR4
 #include <syscall.h>
 #else /* SVR4 */
@@ -59,7 +59,7 @@ extern NTFY_CNDTBL *ntfy_cndtbl[NTFY_LAST_CND];
 
 /* NOTE! This assumes NSIG is 32. Not very portable */
 /* ndet_prev_sigvec needs to start off at all zeros */
-#if !defined(SVR4) && !defined(__linux__)
+#if !defined(SVR4) && !defined(__linux__) && !defined(__NetBSD__)
 pkg_private_data struct sigvec ndet_prev_sigvec[NSIG] = {
     {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0},
     {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0},
@@ -80,13 +80,13 @@ pkg_private int ndet_signal_catcher();
 pkg_private void ndet_signal_catcher();
 #endif
 
-#if !defined(SVR4) && !defined(__linux__)
+#if !defined(SVR4) && !defined(__linux__) && !defined(__NetBSD__)
 pkg_private_data struct sigvec ndet_sigvec = {ndet_signal_catcher, 0, 0};
 static int      ndet_signal_code;
 static struct sigcontext *ndet_signal_context;
 #else /* SVR4 */
 pkg_private_data struct sigaction ndet_sigvec =
-#ifndef __linux__
+#if !defined(__linux__) && !defined(__NetBSD__)
 	{SA_RESTART, {ndet_signal_catcher}, {0}, {0,0}};
 #else
 	{ndet_signal_catcher,0,SA_RESTART,NULL}; /* handler,mask,flags,restorer */
@@ -233,7 +233,7 @@ notify_start()
 	     * select, not ON THE WAY into select).
 	     */
 #ifndef SVR4
-#ifndef __linux__
+#if !defined(__linux__) && !defined(__NetBSD__)
 	    nfds = syscall(SYS_select,
 			   FD_SETSIZE, &ibits, &obits, &ebits,
 		 (sigisempty(&ndet_sigs_received)) ? timer : &ndet_polling_tv);
@@ -414,7 +414,7 @@ ndet_fig_fd_change()
     FD_ZERO(&ndet_obits);
     FD_ZERO(&ndet_ebits);
     sigdelset( &ndet_sigs_auto, SIGIO );
-#ifndef __linux__
+#if !defined(__linux__) && !defined(__NetBSD__)
     sigdelset( &ndet_sigs_auto, SIGURG );
 #endif
     /* Recompute all bits */
@@ -426,7 +426,7 @@ ndet_fig_fd_change()
 				    ndet_fd_change, NTFY_ENUM_DATA_NULL);
     /* Toggle notifier auto signal catching if situation changed */
     ndet_toggle_auto(&sigs_tmp, SIGIO);
-#ifndef __linux__
+#if !defined(__linux__) && !defined(__NetBSD__)
     ndet_toggle_auto(&sigs_tmp, SIGURG);
 #endif
 }
@@ -792,7 +792,7 @@ ndet_signal_catcher(sig, code, scp)
 #endif /* SVR4 */
 {
 
-#if defined(SVR4) || defined(__linux__)
+#if defined(SVR4) || defined(__linux__) || defined(__NetBSD__)
     void        (*old_handler) () = ndet_prev_sigvec[sig].sa_handler;
 #else
     void        (*old_handler) () = ndet_prev_sigvec[sig].sv_handler;

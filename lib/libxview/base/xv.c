@@ -558,6 +558,8 @@ va_dcl
 	    status = XV_OK;
 #if (__GLIBC__ > 2) || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 1)
 	    __va_copy(args, args_save);
+#elif defined(__NetBSD__)
+	    va_copy(args, args_save);
 #else
 	    args = args_save;
 #endif	    
@@ -581,6 +583,8 @@ va_dcl
 	 */
 #if (__GLIBC__ > 2) || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 1)
 	__va_copy(args, args_save);
+#elif defined(__NetBSD__)
+	va_copy(args, args_save);
 #else
         args = args_save;
 #endif	

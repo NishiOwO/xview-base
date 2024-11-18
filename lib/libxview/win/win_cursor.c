@@ -19,6 +19,11 @@ static char     sccsid[] = "@(#)win_cursor.c 20.24 93/06/28";
 #include <xview/win_struct.h>
 #include <xview_private/draw_impl.h>
 #include <X11/Xlib.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 /*
  * Mouse cursor operations.

@@ -14,6 +14,11 @@ static char     sccsid[] = "@(#)fm_geom.c 20.31 93/06/28";
 #include <xview/window.h>
 #include <xview/font.h>
 #include <pixrect/pixfont.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 /* OPEN LOOK footer sizes */
 /* Pre-subtracted 3 for the size of the resize handle */

@@ -470,7 +470,7 @@ ttysw_fork_it(ttysw0, argv, wfd)
     char	    appname[20];
     char	    *p;
     unsigned        ttysw_error_sleep = 1;
-#if !defined(SVR4) && !defined(__linux__)
+#if !defined(SVR4) && !defined(__linux__) && !defined(__NetBSD__)
     struct sigvec   vec, ovec;
 #else
     struct sigaction	vec, ovec;
@@ -501,7 +501,7 @@ ttysw_fork_it(ttysw0, argv, wfd)
     }
 
     /* Set up the child characteristics */
-#if !defined(SVR4) && !defined(__linux__)  	/* SunOS4.x code */
+#if !defined(SVR4) && !defined(__linux__) && !defined(__NetBSD__)  	/* SunOS4.x code */
     vec.sv_handler = SIG_DFL;
     vec.sv_mask = vec.sv_onstack = 0;
     sigvec(SIGWINCH, &vec, 0);
@@ -711,7 +711,7 @@ ttysw_done(ttysw_folio_private)
  * XXX:	This routine needs lots of cleanup for differences in pty conventions
  *	between systems.
  */
-static int	/* Returns XV_ERROR or XV_OK */
+int	/* Returns XV_ERROR or XV_OK */
 ttyinit(ttysw)
     Ttysw          *ttysw;
 {

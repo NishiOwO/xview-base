@@ -22,6 +22,11 @@ static char     sccsid[] = "@(#)win_cntral.c 20.20 93/06/28";
 #include <xview/rect.h>
 #include <xview/win_input.h>
 #include <xview/win_notify.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 static Notify_error win_send();
 

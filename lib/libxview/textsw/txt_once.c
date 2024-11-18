@@ -49,6 +49,11 @@ static char	sccsid[] = "@(#)txt_once.c 20.131 93/06/28";
 #else
 #include <sys/dir.h>
 #endif /* SVR4 */
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 Pkg_private void textsw_destroy_esh(), textsw_notify_replaced();
 Pkg_private Es_status textsw_checkpoint();
@@ -1357,7 +1362,7 @@ contents or store the contents as a new file."),
 	    
 	xv_destroy(view->drop_site);
 	textsw_view_cleanup(view);
-	VIEW_PRIVATE(view_public) = NULL; /* WG Mar '95 */
+	view_public = NULL; /* WG Mar '95 */
 	break;
 
       default:			/* Conservative in face of new cases. */

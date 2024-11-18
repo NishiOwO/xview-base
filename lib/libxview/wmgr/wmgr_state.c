@@ -17,6 +17,11 @@ static char     sccsid[] = "@(#)wmgr_state.c 20.23 93/06/28";
 #include <stdio.h>
 #include <xview/wmgr.h>
 #include <xview/win_struct.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 Xv_public void
 wmgr_changelevel(window, parent, top)

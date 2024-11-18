@@ -16,6 +16,11 @@ static char     sccsid[] = "@(#)fmbs_set.c 1.44 93/06/28";
 #include <xview_private/draw_impl.h>
 #include <xview_private/wmgr_decor.h>
 #include <xview/server.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 Pkg_private     Xv_opaque
 frame_base_set_avlist(frame_public, avlist)

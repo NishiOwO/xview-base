@@ -18,6 +18,11 @@ static char     sccsid[] = "@(#)fm_win.c 20.31 90/11/08";
 #include <xview_private/i18n_impl.h>
 #include <xview_private/fm_impl.h>
 #include <xview_private/draw_impl.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 /*
  * use the window manager to set the position and trim the size of the base

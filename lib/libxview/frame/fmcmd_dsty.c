@@ -12,6 +12,11 @@ static char     sccsid[] = "@(#)fmcmd_dsty.c 1.19 93/06/28";
 
 #include <xview_private/fm_impl.h>
 #include <xview_private/frame_cmd.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 /* Destroy the frame struct */
 Pkg_private int

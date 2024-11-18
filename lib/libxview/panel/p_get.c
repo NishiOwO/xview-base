@@ -20,6 +20,7 @@ static int      shrink_to_fit();
 #define MAX_NEGATIVE_SHRINK 2000
 #define SHRINK_MARGIN       4
 
+static int panel_shrink_margin();
 
 /*ARGSUSED*/
 Pkg_private     Xv_opaque

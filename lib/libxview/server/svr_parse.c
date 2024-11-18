@@ -17,6 +17,12 @@ static char     sccsid[] = "@(#)svr_parse.c 1.9 93/06/28";
 #include <xview_private/svr_impl.h>
 #include <xview_private/portable.h>
 
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
+
 /*
  * This file contain only one exported function:
  *

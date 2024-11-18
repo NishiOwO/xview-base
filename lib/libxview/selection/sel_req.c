@@ -17,10 +17,14 @@ static char     sccsid[] = "@(#)sel_req.c 1.43 93/06/29";
 #include <xview/notify.h>
 #include <sys/time.h>
 
-#if defined(SVR4) || defined(__linux__)
+#if defined(SVR4) || defined(__linux__) || defined(__NetBSD__)
 #include <stdlib.h> 
 #endif /* SVR4 */
+#include <stddef.h>
 
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 #define ITIMER_NULL  ((struct itimercal *)0)
 
@@ -56,6 +60,10 @@ static int GetSelection();
 static int ProcessReply();
 static Requestor *SelGetReq();
 
+static int XvGetRequestedValue();
+static int ProcessNonBlkIncr();
+static int ProcessReq();
+static int OldPkgIsOwner();
 
 /*ARGSUSED*/
 Pkg_private int
@@ -1226,7 +1234,7 @@ Selection_requestor  sel;
 }
 
 
-static XID 
+XID 
 SelGetOwnerXID( selReq )
 Sel_req_info  *selReq;
 {

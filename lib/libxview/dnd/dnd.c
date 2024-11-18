@@ -22,7 +22,11 @@ static char     sccsid[] = "@(#)dnd.c 1.30 93/06/28";
 static int  SendDndEvent(),
 	    Verification(),
 	    ConstructSiteList(),
-	    FindDropSite();
+	    FindDropSite(),
+            SendTrigger(),
+	    IsV2App(),
+	    SendOldDndEvent(),
+	    WaitForAck();
 
 /* DND_HACK begin */
 /* The code highlighted by the words DND_HACK is here to support dropping

@@ -18,6 +18,12 @@
 #include <xview/win_input.h>
 #include <xview_private/portable.h>
 
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
+
 
 
 /***************************************************************************

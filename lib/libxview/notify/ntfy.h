@@ -202,7 +202,7 @@ extern	int ntfy_nodes_avail;	/* count of nodes available without having
 extern	sigset_t ntfy_sigs_delayed;/* Bit mask of signals received while in
 				      critical section */
 
-#if defined(__linux__) && defined(__GLIBC__)
+#if (defined(__linux__) && defined(__GLIBC__)) || defined(__NetBSD__)
 /* martin.buck@bigfoot.com */
 #define sigisempty(s) sigisemptyset(s)
 #else

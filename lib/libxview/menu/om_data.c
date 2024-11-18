@@ -11,6 +11,11 @@ static char     sccsid[] = "@(#)om_data.c 20.28 93/06/28";
  */
 
 #include <xview/openmenu.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 Pkg_private int		menu_create_internal();
 Pkg_private int		menu_create_item_internal();

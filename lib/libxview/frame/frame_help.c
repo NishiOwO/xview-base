@@ -17,6 +17,11 @@ static char     sccsid[] = "@(#)frame_help.c 1.27 93/06/28";
 #include <xview/cursor.h>
 #include <xview/server.h>
 #include <xview_private/svr_atom.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 #include <X11/Xatom.h>
 

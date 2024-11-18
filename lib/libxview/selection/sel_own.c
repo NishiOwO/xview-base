@@ -44,6 +44,7 @@ static void SendIncrMessage();
 static void SetupPropInfo();
 static void OwnerProcessIncr();
 static void RegisterSelClient();
+static int SendIncr();
 
 extern XContext  selCtx;
 extern XContext  propCtx;

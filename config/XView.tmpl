@@ -362,7 +362,7 @@ XCOMM # rules to those supplied with X Version 11 release 5.
              XVCLIENTSYSDEFINES = -DSVR4 -DSYSV
 #else
              SYSV_CLIENT_LIB =
-             XVCLIENTSYSDEFINES = -DSUNOS41
+             XVCLIENTSYSDEFINES =
 #endif
 
 /*
@@ -461,7 +461,7 @@ XCOMM # rules to those supplied with X Version 11 release 5.
 	lumpi@dobag.in-berlin.de
 
 #undef CcCmd
-#define CcCmd cc
-#define LibraryCcCmd cc */
+#define CcCmd gcc
+#define LibraryCcCmd gcc */
 #include <XView.rules>
 #endif /* XViewTmpl */

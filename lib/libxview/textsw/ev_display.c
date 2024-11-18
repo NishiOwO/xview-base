@@ -894,7 +894,7 @@ ev_display_fixup(view)
 }
 
 
-static void
+void
 ev_swap_line_table(table1, table2)
     Ev_line_table  *table1;
     Ev_line_table  *table2;
@@ -940,7 +940,7 @@ ev_scroll_lines(view, line_count, scroll_by_display_lines)
 	register int    i;
 	Es_index        pos, pos_to_remember;
 	Pkg_private void ev_lt_format();
-	static void     ev_swap_line_table();
+	void     ev_swap_line_table();
 
 	esbuf.esh = chain->esh;
 	esbuf.buf = buf;

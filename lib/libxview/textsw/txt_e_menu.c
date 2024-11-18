@@ -639,7 +639,6 @@ textsw_save2str(s, t)
 /*
  * Are there any shell meta-characters in string s?
  */
-static
 any_shell_meta(s)
     register char  *s;
 {

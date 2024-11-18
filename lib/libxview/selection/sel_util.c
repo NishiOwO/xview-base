@@ -18,11 +18,17 @@ static char     sccsid[] = "@(#)sel_util.c 1.29 93/06/28";
 #ifdef SVR4 
 #include <stdlib.h> 
 #endif /* SVR4 */
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 static void tvdiff();
 static void FreeMultiProp();
 static int	SelMatchReply();
 static Sel_req_tbl *SelMatchReqTbl();
+static int SelFindReply();
 
 Pkg_private struct timeval *
 xv_sel_cvt_xtime_to_timeval( XTime )

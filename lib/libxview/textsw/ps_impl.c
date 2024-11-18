@@ -1230,7 +1230,7 @@ Bad_Args:
     return (result);
 }
 
-static
+
 copy_pieces(to_table, to_index, from_table, first, last_plus_one)
     register ft_handle to_table, from_table;
     int             to_index, first, last_plus_one;
@@ -1242,7 +1242,7 @@ copy_pieces(to_table, to_index, from_table, first, last_plus_one)
 	  (last_plus_one - first) * sizeof_element);
 }
 
-static int
+ int
 get_current_offset(private)
     register Piece_table private;
 {
@@ -1575,7 +1575,7 @@ ps_undo_to_mark(esh, mark, notify_proc, notify_data)
     private->last_write_plus_one = ES_INFINITY;
 }
 
-static          caddr_t
+          caddr_t
 #ifdef ANSI_FUNC_PROTO
 ps_get(Es_handle esh, Es_attribute attribute, ...)
 #else

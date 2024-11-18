@@ -17,6 +17,12 @@ static char     sccsid[] = "@(#)svr_atom.c 1.7 93/06/28";
 #include <xview_private/svr_impl.h>
 #include <xview/server.h>
 
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
+
 static void update_atom_list();
 
 Xv_private Atom 

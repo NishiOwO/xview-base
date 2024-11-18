@@ -245,7 +245,7 @@ ErrorReturn:
     goto NormalReturn;
 }
 
-static int
+int
 talk_to_filter(view, filter_input, filter_output, first, last_plus_one,
 	       interpret_reply)
     register Textsw_view_handle view;
@@ -859,7 +859,7 @@ textsw_close_nonstd_fds_on_exec()
 #endif
 }
 
-static int
+int
 start_filter(filter_argv, filter_input, filter_output)
     char           *filter_argv[];
     int            *filter_input, *filter_output;

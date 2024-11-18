@@ -26,6 +26,11 @@ static char     sccsid[] = "@(#)fm_cmdline.c 20.46 93/06/28";
 #include <xview_private/fm_impl.h>
 #include <xview_private/i18n_impl.h>
 #include <X11/Xutil.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 extern Pixrect *icon_load_mpr();
 static int frame_parse_color();

@@ -19,7 +19,7 @@ static char     sccsid[] = "@(#)txt_again.c 20.43 93/06/28";
 #include <xview_private/txt_impl.h>
 #include <xview_private/ev_impl.h>
 #include <xview_private/txt_18impl.h>
-#if defined SVR4 || defined __linux__
+#if defined SVR4 || defined __linux__ || defined(__NetBSD__)
 #include <stdlib.h>
 #include <string.h>
 #endif /* SVR4 */
@@ -130,7 +130,7 @@ textsw_string_append(ptr_to_string, buffer, buffer_length)
 
 int             textsw_again_debug;	/* = 0 for -A-R */
 
-static int
+int
 textsw_string_min_free(ptr_to_string, min_free_desired)
     register string_t *ptr_to_string;
     int             min_free_desired;
@@ -177,7 +177,7 @@ textsw_string_min_free(ptr_to_string, min_free_desired)
  * Recording routines
  */
 
-#ifdef __linux__
+#if defined(__linux__) || defined(__NetBSD__)
 /* The textsw_printf as written created a FILE struct, and called
  * _doprnt() to format the text to an XView internal buffer. If I
  * understand this correctly, it's just a replacement for vsprintf.
@@ -643,7 +643,7 @@ textsw_record_trash_insert(textsw)
  * Replaying routines
  */
 
-#ifdef __linux__
+#if defined(__linux__) || defined(__NetBSD__)
 /* The textsw_scanf as written created a FILE struct, and called
  * _doscan() to do the scanning on the instring.
  * This depends heavily on the internal structure of FILE, and is not

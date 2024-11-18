@@ -17,6 +17,12 @@ static char     sccsid[] = "@(#)svr_get.c 20.69 93/06/28";
 #include <xview_private/portable.h>
 #include <xview/sel_svc.h>
 
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
+
 Xv_private Xv_opaque xv_font_with_name();
 Pkg_private Atom server_intern_atom();
 

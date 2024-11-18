@@ -40,6 +40,12 @@ static char     sccsid[] = "@(#)server.c 20.157 93/04/28";
 #include <X11/Xatom.h>
 #include <X11/Xresource.h>
 
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
+
 #define	LIB_LOCALE	"/lib/locale/"
 
 #define	ISO8859_1	"iso_8859_1"
@@ -114,6 +120,8 @@ extern Xv_Server xv_default_server;
 extern Xv_Screen xv_default_screen;
 extern Display *xv_default_display;
 #endif
+
+static int xv_set_scheduler();
 
 /* Global data */
 Xv_private_data Defaults_pairs xv_kbd_cmds_value_pairs[4] = {

@@ -19,6 +19,11 @@ static char     sccsid[] = "@(#)p_num_txt.c 20.47 93/06/28";
 #include <xview/defaults.h>
 #include <xview/screen.h>
 #include <xview/pixwin.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 /* Offset of increment button from text field's right edge of rect */
 #define BUTTON_OFFSET		5

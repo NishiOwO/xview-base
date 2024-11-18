@@ -13,6 +13,11 @@ static char     sccsid[] = "@(#)fm_layout.c 20.51 93/06/28";
 #include <xview_private/i18n_impl.h>
 #include <xview_private/fm_impl.h>
 #include <xview_private/draw_impl.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 static Xv_Window frame_prev_child();
 static void     expand_sw();

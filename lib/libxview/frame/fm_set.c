@@ -23,6 +23,11 @@ static char     sccsid[] = "@(#)fm_set.c 20.110 93/06/28";
 #include <xview/cms.h>
 #include <xview/server.h>
 #include <pixrect/pixrect.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 #ifdef __STDC__ 
 #ifndef CAT
 #define CAT(a,b)        a ## b 

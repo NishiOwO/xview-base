@@ -19,6 +19,11 @@ static char     sccsid[] = "@(#)win_compat.c% 20.23 93/06/28";
 #include <xview/window.h>
 #include <xview/win_input.h>
 #include <xview/fullscreen.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 /* ARGSUSED */
 void

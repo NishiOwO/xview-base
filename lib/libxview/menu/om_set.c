@@ -18,6 +18,11 @@ static char     sccsid[] = "@(#)om_set.c 20.96 93/06/28";
 #include <xview/font.h>
 #include <xview/notify.h>
 #include <xview/panel.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 /* -------------------------------------------------------------------- */
 

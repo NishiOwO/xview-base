@@ -24,6 +24,11 @@ static char     sccsid[] = "@(#)win_damage.c% 20.35 93/06/28";
 #include <xview/rect.h>
 #include <xview/rectlist.h>
 #include <xview/xv_xrect.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 extern Xv_object win_data();
 

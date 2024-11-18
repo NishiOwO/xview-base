@@ -18,6 +18,11 @@ static char     sccsid[] = "@(#)win_bldkmp.c 20.26 93/06/28";
 #include <X11/Xlib.h>
 #include <xview_private/win_keymap.h>
 #include <X11/keysym.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 
 

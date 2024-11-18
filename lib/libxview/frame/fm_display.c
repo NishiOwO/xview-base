@@ -23,6 +23,11 @@ static char     sccsid[] = "@(#)fm_display.c 20.83 93/06/28";
 #include <xview/cms.h>
 #include <X11/Xatom.h>
 #include <X11/Xutil.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 
 Pkg_private void

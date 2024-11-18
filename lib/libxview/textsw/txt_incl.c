@@ -108,14 +108,14 @@ do_include_proc(folio, ie)
 
     /* if "cd" is not disabled and the "cd" dir is not the current dir */
 #ifdef OW_I18N
-#if defined(SVR4) || defined(__linux__)
+#if defined(SVR4) || defined(__linux__) || defined(__NetBSD__)
     (void) getcwd(curr_dir_mb, MAX_STR_LENGTH);
 #else
     (void) getwd(curr_dir_mb);
 #endif /* SVR4 */
     (void) mbstowcs(curr_dir, curr_dir_mb, MAX_STR_LENGTH);
 #else /* OW_I18N */
-#if defined(SVR4) || defined(__linux__)
+#if defined(SVR4) || defined(__linux__) || defined(__NetBSD__)
     (void) getcwd(curr_dir, MAX_STR_LENGTH);
 #else
     (void) getwd(curr_dir);
@@ -272,7 +272,7 @@ create_include_items(panel, view)
     include_string[0] = NULL;
     (void) textsw_get_selection(view, &dummy, &dummy, include_string,
 				MAX_STR_LENGTH);
-#if defined(SVR4) || defined(__linux__)
+#if defined(SVR4) || defined(__linux__) || defined(__NetBSD__)
  (void) getcwd(current_dir_include_string, MAX_STR_LENGTH);
 #else
   (void) getwd(current_dir_include_string);
@@ -384,14 +384,14 @@ include_cmd_proc(fc,path,file,client_data)
 
     /* if "cd" is not disabled and the "cd" dir is not the current dir */
 #ifdef OW_I18N
-#if defined(SVR4) || defined(__linux__)
+#if defined(SVR4) || defined(__linux__) || defined(__NetBSD__)
     (void) getcwd(curr_dir_mb, MAX_STR_LENGTH);
 #else
     (void) getwd(curr_dir_mb);
 #endif /* SVR4 */
     (void) mbstowcs(curr_dir, curr_dir_mb, MAX_STR_LENGTH);
 #else /* OW_I18N */
-#if defined(SVR4) || defined(__linux__)
+#if defined(SVR4) || defined(__linux__) || defined(__NetBSD__)
     (void) getcwd(curr_dir, MAX_STR_LENGTH);
 #else
     (void) getwd(curr_dir);

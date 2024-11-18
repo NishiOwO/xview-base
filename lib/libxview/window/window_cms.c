@@ -18,6 +18,11 @@ static char     sccsid[] = "@(#)window_cms.c 20.57 93/06/28";
 #include <xview/cms.h>
 #include <xview_private/windowimpl.h>
 #include <X11/Xatom.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 
 Attr_attribute  xv_cms_name_key = NULL;

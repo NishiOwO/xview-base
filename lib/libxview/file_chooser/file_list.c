@@ -41,6 +41,7 @@ static int		go_down_one_directory();
 static int		flist_list_notify();
 static int		validate_new_directory();
 static void		flist_new_dir();
+static int		flist_match_regex();
 
 #if defined(__STDC__) || defined(__cplusplus) || defined(c_plusplus)
 static void	flist_error(File_list_private *private, char *format, ...);

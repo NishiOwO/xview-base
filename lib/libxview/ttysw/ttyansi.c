@@ -199,7 +199,7 @@ local_replace_bytes(textsw, pty_insert, last_plus_one, buf, buf_len)
  * the user_mark and read_only_mark BEFORE calling, and AFTER call for
  * resetting them.
  */
-static int
+int
 send_input_to_textsw(textsw, buf, buf_len, end_transcript)
     Textsw          textsw;
     register CHAR  *buf;
@@ -1135,7 +1135,7 @@ ttysw_restore_cursor()
     (void) ttysw_restoreCursor();
 }
 
-static int
+int
 ansi_lf(ttysw_view, addr, len)
     Ttysw_view_handle ttysw_view;
     CHAR           *addr;
@@ -1204,7 +1204,7 @@ ansi_lf(ttysw_view, addr, len)
     return (lfs);
 }
 
-static int
+int
 ansi_char(ttysw_view, addr, olen)
     Ttysw_view_handle ttysw_view;
     register CHAR  *addr;

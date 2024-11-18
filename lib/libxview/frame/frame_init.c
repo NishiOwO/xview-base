@@ -20,6 +20,11 @@ static char     sccsid[] = "@(#)frame_init.c 1.46 93/06/28";
 #include <xview_private/svr_atom.h>
 #include <xview/defaults.h>
 #include <xview/font.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 #ifndef MAXHOSTNAMELEN
 #define MAXHOSTNAMELEN 64

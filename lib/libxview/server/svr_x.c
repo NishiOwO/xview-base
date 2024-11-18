@@ -27,6 +27,12 @@ static char     sccsid[] = "@(#)svr_x.c 20.57 93/06/28";
 #include <xview_private/svr_impl.h>
 #include <X11/keysym.h>
 
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
+
 extern Display *XOpenDisplay();
 #ifndef __linux__
 Xv_private_data Defaults_pairs xv_kbd_cmds_value_pairs[4];

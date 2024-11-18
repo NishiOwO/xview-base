@@ -27,6 +27,11 @@ static char     sccsid[] = "@(#)win_treeop.c 20.55 93/06/28";
 #include <X11/Xutil.h>
 #include <X11/X.h>
 #include <xview/screen.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 Xv_object       win_data();
 

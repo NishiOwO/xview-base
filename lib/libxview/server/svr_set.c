@@ -15,6 +15,12 @@ static char     sccsid[] = "@(#)svr_set.c 20.56 93/06/28";
 #include <xview/win_event.h>
 #include <xview_private/svr_impl.h>
 
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
+
 Xv_private Notify_value	xv_input_pending();
 Xv_private void 	server_journal_sync_event();
 /* ACC_XVIEW */

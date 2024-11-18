@@ -785,7 +785,7 @@ Skip_pc_pr_tests:
     return (result);
 }
 
-static
+
 paint_batch(op, rop, pw, rect, run, run_length, bounds, font)
     int             op, rop;
     Xv_Window       pw;

@@ -140,7 +140,7 @@ textsw_new_menu(folio)
     Frame           frame = xv_get(textsw, WIN_FRAME);
     Menu_item       break_mode_item, undo_cmds_item, find_sel_cmds_item,
                     select_field_cmds_item;
-    static int      textsw_edit_do_menu_action(), textsw_view_do_menu_action(),
+    int      textsw_edit_do_menu_action(), textsw_view_do_menu_action(),
                     textsw_find_do_menu_action();
     int             index;
     Pkg_private char *textsw_get_extras_filename();
@@ -914,7 +914,6 @@ Load File Has Been Disabled."),
     }
 }
 
-static int
 textsw_edit_do_menu_action(cmd_menu, cmd_item)
     Menu            cmd_menu;
     Menu_item       cmd_item;
@@ -1131,7 +1130,6 @@ Press \"Continue\" to proceed."),
     }
 }
 
-static int
 textsw_view_do_menu_action(cmd_menu, cmd_item)
     Menu            cmd_menu;
     Menu_item       cmd_item;
@@ -1289,7 +1287,6 @@ Press \"Continue\" to proceed."),
 	break;
     }
 }
-static int
 textsw_find_do_menu_action(cmd_menu, cmd_item)
     Menu            cmd_menu;
     Menu_item       cmd_item;

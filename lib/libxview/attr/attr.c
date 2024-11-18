@@ -93,6 +93,8 @@ Xv_private Attr_avlist copy_va_to_av( valist1, avlist1, attr1 )
    */
 #if (__GLIBC__ > 2) || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 1)
    __va_copy(valist, valist1);
+#elif defined(__NetBSD__)
+   va_copy(valist, valist1);
 #else
    valist = valist1;
 #endif   

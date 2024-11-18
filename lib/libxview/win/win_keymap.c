@@ -30,6 +30,11 @@ static char     sccsid[] = "@(#)win_keymap.c 20.20 93/06/28";
 #include <xview/win_input.h>
 #include <xview_private/bitmask.h>
 #include <xview_private/win_keymap.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 static          caddr_t
 Malloc(s)

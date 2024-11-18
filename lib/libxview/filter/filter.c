@@ -39,11 +39,11 @@ static char     sccsid[] = "@(#)filter.c 20.28 93/06/28";
 
 char           *stream_fgets();
 
-enum CharClass
+static enum CharClass
                 breakProc();
-struct CharAction
+static struct CharAction
                 digits();
-
+static int any_shell_meta();
 
 struct filter_rec **
 xv_parse_filter_table(in, filename)

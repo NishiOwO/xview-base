@@ -492,7 +492,7 @@ textsw_set_pop_up_location(frame_parent, pop_up_frame)
 #undef MY_OFFSET
 }
 
-static void
+void
 add_exten_item( fc )
      File_chooser fc;
 {
@@ -552,7 +552,7 @@ add_exten_item( fc )
            NULL);
 }
 
-static void
+void
 show_dot_files_proc( item, value, event )
      Panel_choice_item item;
      int value;
@@ -567,7 +567,7 @@ show_dot_files_proc( item, value, event )
  * FILE_CHOOSER_EXTEN_FUNC, layout extension items within the
  * given extension rect.
  */
-static int
+int
 fc_exten_func( fc, frame_rect, exten_rect, left_edge, right_edge, max_height )
      File_chooser fc;
      Rect *frame_rect;

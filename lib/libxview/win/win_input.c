@@ -54,6 +54,11 @@ static char     sccsid[] = "@(#)win_input.c 20.208 93/06/28";
 #include <xview/panel.h>
 #include <xview/textsw.h>
 #include <xview/termsw.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 static void     tvdiff();
 static void     win_handle_quick_selection();
@@ -602,7 +607,7 @@ xview_x_input_readevent(display, event, req_window, block, type, xevent_mask, re
  * once.
  */
 
-static int
+int
 xevent_to_event(display, xevent, event, pwindow)
     Display        	*display;
     XEvent         	*xevent;

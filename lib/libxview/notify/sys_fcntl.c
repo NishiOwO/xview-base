@@ -16,7 +16,9 @@ static char     sccsid[] = "@(#)sys_fcntl.c 20.13 93/06/28 Copyr 1985 Sun Micro"
 
 #ifndef SVR4
 #ifndef __linux__
+#ifndef __NetBSD__
 #include <syscall.h>
+#endif
 #else
 #include "linux_select.h"
 #endif
@@ -29,7 +31,7 @@ pkg_private int
 notify_fcntl(fd, cmd, arg)
     int             fd, cmd, arg;
 {
-#ifndef __linux__
+#if !defined(__linux__) && !defined(__NetBSD__)
     return (syscall(SYS_fcntl, fd, cmd, arg));
 #else
 #ifdef __GLIBC__

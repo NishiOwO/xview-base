@@ -25,6 +25,11 @@ static char     sccsid[] = "@(#)win_bell.c 20.20 93/06/28";
 #include <xview/rect.h>
 #include <X11/Xlib.h>
 #include <xview_private/draw_impl.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 Xv_private void win_beep();
 

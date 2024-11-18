@@ -21,6 +21,11 @@ static char     sccsid[] = "@(#)win_global.c 20.39 93/06/28";
 #include <xview/window.h>
 #include <xview/server.h>
 #include <X11/Xlib.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 #define POINTERMASK  (ButtonPressMask | ButtonReleaseMask | EnterWindowMask |\
 		      LeaveWindowMask | PointerMotionMask |\

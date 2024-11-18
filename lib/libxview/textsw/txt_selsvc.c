@@ -190,7 +190,7 @@ textsw_acquire_seln(textsw, rank)
 
 #define	TXTSW_NEED_SELN_CLIENT	(Seln_client)1
 
-static int
+int
 textsw_should_ask_seln_svc(textsw)
     register Textsw_folio textsw;
 {

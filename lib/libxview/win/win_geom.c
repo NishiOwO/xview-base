@@ -20,6 +20,11 @@ static char     sccsid[] = "@(#)win_geom.c 20.35 93/06/28";
 #include <xview/window.h>
 #include <xview_private/draw_impl.h>
 #include <xview_private/windowimpl.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 /*
  * Geometry operations.

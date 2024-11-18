@@ -31,6 +31,11 @@ static char     sccsid[] = "@(#)sel_agent.c 1.81 93/06/29";
 #include <xview/sel_compat.h>
 #include <X11/Xatom.h>
 #include <stdio.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 /*
  * The following header file provides fd_set compatibility with SunOS for
  * Ultrix
@@ -68,7 +73,7 @@ static Seln_result seln_do_request_from_file();
 static void     selection_agent_do_function();
 static Atom 	get_atom();
 static Seln_attribute save_atom();
-
+static int waitforReadableTimeout();
 
 Xv_private Seln_result seln_convert_request_to_property();
 /* called by seln_svc.c

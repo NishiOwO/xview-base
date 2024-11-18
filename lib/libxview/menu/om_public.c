@@ -48,6 +48,11 @@ static char     sccsid[] = "@(#)om_public.c 20.146 93/06/28";
 
 #include <xview_private/draw_impl.h>
 #include <xview_private/om_impl.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 /* ------------------------------------------------------------------------- */
 

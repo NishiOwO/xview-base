@@ -112,7 +112,7 @@ static char     sccsid[] = "@(#)es_file.c 20.49 93/06/28";
 #include <xview_private/txt_18impl.h>
 
 
-#if defined(__linux__) && defined(__GLIBC__)
+#if defined(__NetBSD__) || (defined(__linux__) && defined(__GLIBC__))
 /* martin.buck@bigfoot.com */
 #include <errno.h>
 #else
@@ -495,7 +495,7 @@ Error_Return:
 }
 
 /* ARGSUSED */
-static          caddr_t
+          caddr_t
 #ifdef ANSI_FUNC_PROTO
 es_file_get(Es_handle esh, Es_attribute attribute, ...)
 #else
@@ -522,7 +522,7 @@ va_dcl
 	return ((caddr_t) ES_TYPE_FILE);
 #ifdef OW_I18N
       case ES_SKIPPED:
-	return ((caddr_t) private->skipped);
+	return ((void*) private->skipped);
 #endif
       default:
 	return (0);

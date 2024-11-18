@@ -24,6 +24,11 @@ static char     sccsid[] = "@(#)window_set.c 20.148 93/06/28";
 #ifdef SVR4 
 #include <stdlib.h> 
 #endif /* SVR4 */
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 /*
  * Extern
@@ -1072,7 +1077,7 @@ window_set_avlist_tier3(win_public, attrs, error, new_rect, old_rect, win_attrs,
 
       case WIN_SOFT_FNKEY_LABELS: {
         register Xv_Drawable_info 	*info;
-        static void                   	 window_set_softkey_labels();
+        void                   	 window_set_softkey_labels();
 
         DRAWABLE_INFO_MACRO(win_public, info);
         win->softkey_flag = TRUE;
@@ -1472,7 +1477,7 @@ window_x_allow_events(display)
     XAllowEvents(display, AsyncBoth, CurrentTime);
 }
 
-static void
+void
 window_set_softkey_labels(info, string)
    Xv_Drawable_info 	*info;
    char 		*string;

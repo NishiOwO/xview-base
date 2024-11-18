@@ -14,8 +14,8 @@ static char     sccsid[] = "@(#)wmgr_menu.c 20.42 93/06/28";
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
-#if defined(sparc) || defined(__linux__)
-#if defined(SVR4) || defined(__linux__)
+#if defined(sparc) || defined(__linux__) || defined(__NetBSD__)
+#if defined(SVR4) || defined(__linux__) || defined(__NetBSD__)
 #include <unistd.h>
 #else
 #include <vfork.h>
@@ -28,6 +28,11 @@ static char     sccsid[] = "@(#)wmgr_menu.c 20.42 93/06/28";
 #include <X11/Xlib.h>
 #include <xview_private/draw_impl.h>
 #include <xview_private/fm_impl.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 static void     wmgr_top_bottom();
 

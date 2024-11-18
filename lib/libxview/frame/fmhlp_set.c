@@ -16,6 +16,11 @@ static char     sccsid[] = "@(#)fmhlp_set.c 1.26 93/06/28";
 #include <xview_private/draw_impl.h>
 #include <xview_private/wmgr_decor.h>
 #include <xview/server.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 #ifdef OW_I18N
      /*

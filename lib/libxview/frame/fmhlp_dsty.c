@@ -12,6 +12,11 @@ static char     sccsid[] = "@(#)fmhlp_dsty.c 1.15 93/06/28";
 
 #include <xview_private/fm_impl.h>
 #include <xview_private/frame_help.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 static void     frame_help_free();
 

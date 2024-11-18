@@ -21,6 +21,11 @@ static char     sccsid[] = "@(#)wmgr_decor.c 1.27 93/06/28";
 #include <xview_private/draw_impl.h>
 
 #include <X11/Xatom.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 
 Xv_private int

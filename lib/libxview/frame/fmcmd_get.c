@@ -12,6 +12,11 @@ static char     sccsid[] = "@(#)fmcmd_get.c 1.27 93/06/28";
 
 #include <xview_private/fm_impl.h>
 #include <xview_private/frame_cmd.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 /* ARGSUSED */
 Pkg_private     Xv_opaque

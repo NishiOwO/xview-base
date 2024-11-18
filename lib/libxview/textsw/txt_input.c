@@ -200,14 +200,14 @@ textsw_process_event(view_public, ie, arg)
     Notify_arg      arg;
 {
     Pkg_private void     textsw_update_scrollbars();
-    static int      textsw_scroll_event();
-    static int      textsw_function_key_event();
-    static int      textsw_mouse_event();
-    static int      textsw_edit_function_key_event();
-    static int      textsw_caret_motion_event();
-    static int      textsw_field_event();
-    static int      textsw_file_operation();
-    static int      textsw_erase_action();
+    int      textsw_scroll_event();
+    int      textsw_function_key_event();
+    int      textsw_mouse_event();
+    int      textsw_edit_function_key_event();
+    int      textsw_caret_motion_event();
+    int      textsw_field_event();
+    int      textsw_file_operation();
+    int      textsw_erase_action();
 
     int             caret_was_up;
     int             result = TEXTSW_PE_USED;
@@ -593,7 +593,6 @@ Return:
 #ifdef OW_I18N
 Pkg_private	int
 #else
-static int
 #endif
 textsw_do_newline(view, action)
     register Textsw_view_handle view;
@@ -1107,7 +1106,6 @@ textsw_undo(textsw)
     textsw_end_undo(textsw->first_view);
 }
 
-static int
 textsw_scroll_event(view, ie, arg)
     register Textsw_view_handle view;
     register Event *ie;
@@ -1136,7 +1134,6 @@ textsw_scroll_event(view, ie, arg)
     return (is_scroll_event);
 }
 
-static int
 textsw_function_key_event(view, ie, result)
     register Textsw_view_handle view;
     register Event *ie;
@@ -1248,7 +1245,6 @@ textsw_set_copy_or_quick_move_cursor(folio)
     }
 }
 
-static int
 textsw_mouse_event(view, ie)
     register Textsw_view_handle view;
     register Event *ie;
@@ -1370,7 +1366,6 @@ textsw_mouse_event(view, ie)
     return (is_mouse_event);
 }
 
-static int
 textsw_edit_function_key_event(view, ie, result)
     register Textsw_view_handle view;
     register Event *ie;
@@ -1423,7 +1418,6 @@ textsw_edit_function_key_event(view, ie, result)
     return (is_edit_function_key_event);
 }
 
-static int
 textsw_caret_motion_event(view, ie)
     register Textsw_view_handle view;
     register Event *ie;
@@ -1528,7 +1522,6 @@ textsw_caret_motion_event(view, ie)
     return (is_caret_motion_event);
 }
 
-static int
 textsw_field_event(view, ie)
     register Textsw_view_handle view;
     register Event *ie;
@@ -1581,7 +1574,6 @@ textsw_field_event(view, ie)
 }
 
 
-static int
 textsw_file_operation(abstract, ie)
     register Textsw abstract;
     register Event *ie;
@@ -1680,7 +1672,6 @@ Load File Has Been Disabled."),
     return (is_file_op_event);
 }
 
-static int
 textsw_erase_action(textsw, ie)
     Textsw          textsw;
     Event          *ie;

@@ -107,7 +107,7 @@ ev_find_finger(fingers, mark)
 	    : (Ev_finger_handle) 0);
 }
 
-static int
+int
 ev_find_finger_internal(fingers, mark)
     Ev_finger_table *fingers;
     Ev_mark         mark;
@@ -147,7 +147,6 @@ ev_remove_finger(fingers, mark)
     ev_remove_finger_internal(fingers, i);
 }
 
-static
 ev_remove_finger_internal(fingers, i)
     register Ev_finger_table *fingers;
     int             i;

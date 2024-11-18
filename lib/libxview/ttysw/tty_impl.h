@@ -16,10 +16,10 @@
 
 #include <xview_private/portable.h>	/* tty and pty configuration info */
 
-#ifdef	XV_USE_TERMIOS
 #include <termios.h>		/* for POSIX-style tty state structure */
-#else
 #include <sys/ioctl.h>		/* for BSD-style tty state structures */
+#ifdef __NetBSD__
+#include <sgtty.h>
 #endif
 
 #include <xview/tty.h>

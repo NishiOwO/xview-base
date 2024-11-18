@@ -17,6 +17,11 @@ static char     sccsid[] = "@(#)p_gauge.c 1.30 93/06/28 Copyr 1984 Sun Micro";
 #include <xview/font.h>
 #include <xview_private/draw_impl.h>
 #include <xview_private/pw_impl.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 #define GAUGE_PRIVATE(item)	\
 	XV_PRIVATE(Gauge_info, Xv_panel_gauge, item)
@@ -47,6 +52,8 @@ static void	gauge_layout();
 /* Local functions */
 static void     paint_gauge();
 static void     update_rects();
+
+static int etoi();
 
 static Panel_ops ops = {
     panel_default_handle_event,		/* handle_event() */

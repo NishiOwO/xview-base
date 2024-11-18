@@ -16,6 +16,11 @@ static char     sccsid[] = "@(#)p_slider.c 20.84 93/06/28 Copyr 1984 Sun Micro";
 #include <xview/pixwin.h>
 #include <xview/font.h>
 #include <xview_private/draw_impl.h>
+#include <stddef.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 #define SLIDER_PRIVATE(item)	\
 	XV_PRIVATE(Slider_info, Xv_panel_slider, item)
@@ -54,6 +59,8 @@ static void	check_endbox_entered();
 static Panel_setting get_value();
 static void     paint_slider();
 static void     update_rects();
+static int etoi();
+static int itoe();
 
 static Panel_ops ops = {
     panel_default_handle_event,		/* handle_event() */
